@@ -149,6 +149,7 @@ const CalculatorScreen = () => {
           numColumns={4}
           data={buttonsData}
           extraData={expression}
+          keyExtractor={item => item.buttonText || item.iconName}
           renderItem={({ item }) => {
             const value = item.buttonText || item.iconName;
             return (

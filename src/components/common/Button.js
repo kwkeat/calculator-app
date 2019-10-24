@@ -14,11 +14,12 @@ const Button = ({
 }) => {
   const isOperator = type === 'operator';
   const isOperation = type === 'operation';
+  const isNumber = type === 'number';
 
   return (
     <TouchableOpacity style={[styles.container, style, { backgroundColor: Colors[type], borderColor: Colors[type] }]} onPress={onPress}>
-      {iconName !== '' && <Icon name={iconName} size={normalize(50)} color={isOperator && Colors.white} />}
-      {buttonText !== '' && <Text style={[styles.text, isOperation && { color: Colors.black }]}>{buttonText}</Text>}
+      {iconName !== '' && <Icon name={iconName} size={normalize(50)} color={isOperator ? Colors.white : null} />}
+      {buttonText !== '' && <Text style={[styles.text, isOperation ? { color: Colors.black } : null]}>{buttonText}</Text>}
     </TouchableOpacity>
   );
 };
